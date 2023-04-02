@@ -1,6 +1,7 @@
 // Define Mongoose
 const mongoose = require('mongoose');
 const { Thought } = require('.');
+const moment = require('moment');
 
 // Creates a new instance of Mongoose Schema to define and shape each document 
 const reactionSchema = new Schema (
@@ -37,6 +38,7 @@ const thoughtSchema = new mongoose.Schema({
     thoughtText: { 
         type: String, 
         required: true,
+        minLength: 1,
         maxLength: 280
     },
     createdAt: {
@@ -61,6 +63,6 @@ userSchema.virtual("friendCount").get(function () {
     return this.friends.length;
   });
 
-const User = mongoose.model("Thought", thoughtSchema);
+const Thought = mongoose.model("Thought", thoughtSchema);
 
 module.exports = Thought;
