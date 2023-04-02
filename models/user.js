@@ -1,6 +1,8 @@
 // Define Mongoose
 const mongoose = require('mongoose');
 
+const { Schema } = mongoose;
+
 // Creates a new instance of Mongoose Schema to define and shape each document 
 const userSchema = new mongoose.Schema({
     username: { 
