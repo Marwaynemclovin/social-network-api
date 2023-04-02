@@ -1,0 +1,23 @@
+{
+    "name": "social-network-api",
+    "version": "1.0.0",
+    "description": "An API for a social network web application that enables users to share their thoughts, react to their friends' thoughts, and manage their friend list. Built with Node.js, Express, and MongoDB.",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "keywords": [
+      "social network",
+      "API",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "author": "Marwin Manlangit",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.2",
+      "mongoose": "^7.0.3"
+    }
+  }
+  
