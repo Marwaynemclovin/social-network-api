@@ -25,7 +25,7 @@ To use the Social Media API, follow these steps:
 2. Use the available API endpoints to perform actions such as creating and managing users, creating and managing thoughts, and adding and removing friends.
 
 ## Walkthrough:
-A walkthrough video demonstrating how to use the Social Media API can be found at [INSERT VIDEO LINK HERE].
+A walkthrough video demonstrating how to use the Social Media API can be found at ...
 
 ## Features:
 - Create, update, and delete users

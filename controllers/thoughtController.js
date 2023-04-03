@@ -14,7 +14,7 @@ module.exports = {
     Thought.findOne({ _id: req.params.thoughtId })
       .then((thought) => {
         if (!thought) {
-          res.status(404).json({ message: "No Thought with this ID" });
+          res.status(404).json({ message: "No Thought found with this ID" });
           return;
         }
         res.json(thought);
