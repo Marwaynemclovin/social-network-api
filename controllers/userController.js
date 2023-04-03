@@ -8,8 +8,8 @@ module.exports = {
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
-  // Get a single user
-  getSingleUser(req, res) {
+  // Get a single user by ID
+  getSingleUserById(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
       .then((user) =>
@@ -42,7 +42,7 @@ module.exports = {
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
-  // Get single user
+  // Get single user by ID
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .populate('thoughts')

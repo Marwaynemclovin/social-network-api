@@ -77,4 +77,4 @@ THE SOFTWARE.
 
 
 ## Contact:
-For any questions or feedback, please contact me at marwin.m@hotmail.com
+For any questions or feedback, please contact me at marwin.m@hotmail.com.
