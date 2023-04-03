@@ -17,7 +17,7 @@ An API for a social network web application that enables users to share their th
 ## Installation:
 1. Clone the repository to your local machine.
 2. Install the dependencies using `npm install`.
-3. Start the application using `npm start`.
+3. Start the application using `node server.js`.
 
 ## Usage:
 To use the Social Media API, follow these steps:
