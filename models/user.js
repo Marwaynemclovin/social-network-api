@@ -1,48 +1,51 @@
-// Define Mongoose
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
+const Thought = require('./Thought');
 
-const { Schema } = mongoose;
-
-// Creates a new instance of Mongoose Schema to define and shape each document 
-const userSchema = new mongoose.Schema({
-    username: { 
-        type: String, 
-        required: true,
-        unique: true,
-        trim: true
-    },
-    email: {
-        type: String,
-        required: true, 
-        unique: true,
-        match: [
-            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            "Please fill a valid email address",
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            validate: {
+                validator: function(value) {
+                    return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(value);
+                },
+                message: 'Invalid email format!'
+            }
+        },
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            }
         ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ]
     },
-    thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Thought"
+    {
+        toJSON: {
+            getters: true,
+            virtuals: true,
         }
-    ],
-    friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }
-    ]
-}, { 
-    toJSON: { 
-        virtuals: true 
-    }, 
-    id: false 
+    }
+)
+
+userSchema.virtual('friendCount').get(function() {
+    const count = this.friends.length;
+    return count;
 });
 
-userSchema.virtual("friendCount").get(function () {
-    return this.friends.length;
-  });
-
-const User = mongoose.model("User", userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
