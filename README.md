@@ -10,6 +10,7 @@ An API for a social network web application that enables users to share their th
 - [Features](#Features)
 - [Technologies](#Technologies)
 - [Testing](#Testing)
+- [WalkThrough](#WalkThrough)
 - [Contributing](#Contributing)
 - [License](#License)
 - [Contact](#Contact)
@@ -40,6 +41,10 @@ A walkthrough video demonstrating how to use the Social Media API can be found a
 
 ## Testing:
 To run the tests, use the `npm test` command. We use Jest and Supertest for testing.
+
+## WalkThrough:
+User: https://drive.google.com/file/d/1vnxoRY_euWntC2DEQeMPwJl9fmAmAsqc/view
+Thoughts: https://drive.google.com/file/d/1t4LinG3BmoMS8zkz8lDX-aSvSYWfER33/view
 
 ## Contributing:
 We welcome contributions from the community! To contribute, please follow these steps:
